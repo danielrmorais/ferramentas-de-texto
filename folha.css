@@ -8,9 +8,7 @@
     background: url('bg.png');
     background-repeat: repeat;
     background-position: 50% 50%;
-    position: relative;
-    top: 80px;
-    left: 0;
+    padding: 4em 0 4em 0;
   }
   
 .container {
