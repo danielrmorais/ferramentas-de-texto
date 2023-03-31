@@ -38,3 +38,11 @@ function render() {
 }
 
 form.addEventListener('submit', addRecipe);
+
+
+function onButtonClicked() {
+  var text = document.getElementById("recipe").value;
+
+  if(document.getElementById("maiuscula").checked) document.getElementById("recipe").value = text.toUpperCase();
+  if(document.getElementById("minuscula").checked) document.getElementById("recipe").value = text.toLowerCase();
+}
