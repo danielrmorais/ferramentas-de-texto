@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Minhas Ferramentas</title>
+    <link rel="stylesheet" type="text/css" href="folha.css">
+  </head>
+
+  <body id="noiseFilter">
+    <div class="container">
+      <div id="conteudo">
+
+        <h1>Minhas Ferramentas</h1>
+        <br>
+
+        <!--<div id="escolhaFerramenta">
+          <input type="radio" id="maiuscula" name="estiloletra" value="MAIÚSCULA" checked="true">
+          <label for="MAIÚSCULA">MAIÚSCULA</label>
+
+          <input type="radio" id="minuscula" name="estiloletra" value="minúscula">
+          <label for="minúscula">minúscula</label>
+
+          <input type="radio" id="PrimeiraMaiuscula" name="estiloletra" value="Primeira maiúscula">
+          <label for="Primeira maiúscula">Primeira maiúscula</label>
+
+          <input type="radio" id="TudoMinuscula" name="estiloletra" value="tudo minúscula">
+          <label for="tudo minúscula">tudo minúscula</label>
+        </div>-->
+
+<!-- TESTE -->
+        <div id="escolhaFerramenta">
+
+          <div class="radio">
+            <label>
+              <input type="radio" id="maiuscula" name="estiloletra" value="MAIÚSCULA" checked="true">
+              <span>MAIÚSCULA</span>
+            </label>
+          </div>
+
+          <div class="radio">
+            <label>
+              <input type="radio" id="minuscula" name="estiloletra" value="minúscula">
+              <span>minúscula</span>
+            </label>
+          </div>
+
+          <div class="radio">
+            <label>
+              <input type="radio" id="Primeiramaiuscula" name="estiloletra" value="Primeira maiúscula">
+              <span>Primeira maiúscula</span>
+            </label>
+          </div>
+
+          <div class="radio">
+            <label>
+              <input type="radio" id="tudominuscula" name="estiloletra" value="tudo minúscula">
+              <span>tudo minúscula</span>
+            </label>
+          </div>
+
+        </div>
+<!-- FIM - TESTE -->
+
+
+        <br>
+
+        <form id="form">
+          <input type="text" id="recipe" placeholder="Digite seu texto">
+          <button type="submit" id="addBtn">Transformar</button>
+        </form>
+
+        <ul id="recipeList"></ul>
+
+      </div>
+    </div>
+
+
+
+
+
+<script src="scriptao.js"></script>
+
+</body>
+</html>
