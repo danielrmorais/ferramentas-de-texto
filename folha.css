@@ -215,7 +215,8 @@ footer a{
 
   padding: 1em 0;
   /*background-color: rgba(235, 235, 235, 0.6);*/
-  background-color: rgba(241, 241, 241, 1);
+  /*background-color: rgba(241, 241, 241, 1);*/
+  background: linear-gradient(0deg, #f1f1f1, #f1f1f199, transparent);
   font-size: 0.7em;
   color: #777777;
   text-transform: uppercase;
