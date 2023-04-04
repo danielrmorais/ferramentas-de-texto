@@ -8,7 +8,7 @@
     background: url('bg.png');
     background-repeat: repeat;
     background-position: 50% 50%;
-    padding: 4em 0 4em 0;
+    padding: 4em 0 8em 0;
   }
   
 .container {
@@ -111,6 +111,11 @@ label{
 .radio label input[type=radio]:checked + span{
   color: #fafafa;
 }
+.radio input[type="radio"]:disabled, .radio label input[type="radio"]:disabled + span {
+  background: #dceef300;
+  color: #80b1bf;
+  text-decoration: line-through;
+}
 /* fim - teste */
 
 #form{
@@ -198,4 +203,27 @@ li {
 ::placeholder{
   color: rgba(0, 140, 186, 80%);
   font-size: 0.9em;
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  min-height: 18px;
+
+  padding: 1em 0;
+  /*background-color: rgba(235, 235, 235, 0.6);*/
+  background-color: rgba(241, 241, 241, 1);
+  font-size: 0.7em;
+  color: #777777;
+  text-transform: uppercase;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
 }
