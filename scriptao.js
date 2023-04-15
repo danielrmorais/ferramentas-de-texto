@@ -30,11 +30,18 @@ function render() {
     li.innerText = recipe;
 
     //ADICIONEI O EVENTO DE COPIAR TEXTO, SEM O BOTÃO
+    //li.classList.add('copyButton');
+    //li.addEventListener('click', () => {
+    //  const textToCopy = li.innerText;
+    //  navigator.clipboard.writeText(recipe);
+    //  }); 
+      
     li.classList.add('copyButton');
     li.addEventListener('click', () => {
-      const textToCopy = li.innerText;
-      navigator.clipboard.writeText(recipe);
-      });      
+        const textToCopy = li.innerText;
+        navigator.clipboard.writeText(recipe)
+        .then(() => { alert('Texto copiado com sucesso!'); })
+      });
     //
     recipeList.appendChild(li);
 
@@ -61,8 +68,26 @@ form.addEventListener('submit', addRecipe);
 
 
 function onButtonClicked() {
-  var text = document.getElementById("recipe").value;
+  var textInput = document.getElementById("recipe");
+  var text = textInput.value;
+  var uppercaseCheckbox = document.getElementById("maiuscula");
+  var lowercaseCheckbox = document.getElementById("minuscula");
+  var capitalizerCheckbox = document.getElementById("Primeiramaiuscula");
 
-  if(document.getElementById("maiuscula").checked) document.getElementById("recipe").value = text.toUpperCase();
-  if(document.getElementById("minuscula").checked) document.getElementById("recipe").value = text.toLowerCase();
+  var transformedText = text;
+  if (uppercaseCheckbox.checked) {
+    transformedText = transformedText.toUpperCase();
+  }
+  if (lowercaseCheckbox.checked) {
+    transformedText = transformedText.toLowerCase();
+  }
+  if (capitalizerCheckbox.checked) {
+    transformedText = transformText(transformedText);
+  }
+
+  textInput.value = transformedText;
+}
+
+function transformText(text) {
+  return text.replace(/(?:^|\s)\S/g, function(firstLetter) { return firstLetter.toUpperCase(); });
 }
