@@ -23,12 +23,32 @@ function deleteRecipe(index) {
 }
 
 function render() {
+  //LISTANDO O TEXTO
   recipeList.innerHTML = '';
   recipes.forEach((recipe, index) => {
     const li = document.createElement('li');
     li.innerText = recipe;
+
+    //ADICIONEI O EVENTO DE COPIAR TEXTO, SEM O BOTÃO
+    li.classList.add('copyButton');
+    li.addEventListener('click', () => {
+      const textToCopy = li.innerText;
+      navigator.clipboard.writeText(recipe);
+      });      
+    //
     recipeList.appendChild(li);
 
+    //CRIANDO BOTÃO COPIAR TEXTO
+    //const copyButton = document.createElement('button');
+    //copyButton.innerText = '❐';
+    //copyButton.classList.add('copyButton');
+    //copyButton.addEventListener('click', () => {
+    //const textToCopy = li.innerText;
+    //navigator.clipboard.writeText(recipe);
+    //});
+    //li.appendChild(copyButton);
+
+    //DELETANDO O TEXTO
     const deleteBtn = document.createElement('button');
     deleteBtn.innerText = '🗑';
     deleteBtn.classList.add('deleteBtn');

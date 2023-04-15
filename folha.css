@@ -183,7 +183,11 @@ li {
   color: rgba(0, 140, 186, 95%);
   font-weight: 300;
 }
-
+.copyButton:active {
+  border-bottom: 1px #4e945d solid;
+  color: #4e945d;
+  transition: .2s all;
+}
 .deleteBtn {
   background: #008cba;
   color: rgb(239 255 255);
