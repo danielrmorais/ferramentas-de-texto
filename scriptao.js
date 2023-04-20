@@ -29,13 +29,7 @@ function render() {
     const li = document.createElement('li');
     li.innerText = recipe;
 
-    //ADICIONEI O EVENTO DE COPIAR TEXTO, SEM O BOTÃO
-    //li.classList.add('copyButton');
-    //li.addEventListener('click', () => {
-    //  const textToCopy = li.innerText;
-    //  navigator.clipboard.writeText(recipe);
-    //  }); 
-      
+    //ADICIONEI O EVENTO DE COPIAR TEXTO, SEM O BOTÃO     
     li.classList.add('copyButton');
     li.addEventListener('click', () => {
         const textToCopy = li.innerText;
@@ -67,6 +61,7 @@ function render() {
 form.addEventListener('submit', addRecipe);
 
 
+// FUNÇÕES DOS RADIOS DE TEXTO
 function onButtonClicked() {
   var textInput = document.getElementById("recipe");
   var text = textInput.value;
@@ -87,7 +82,35 @@ function onButtonClicked() {
 
   textInput.value = transformedText;
 }
-
 function transformText(text) {
   return text.replace(/(?:^|\s)\S/g, function(firstLetter) { return firstLetter.toUpperCase(); });
+}
+
+//FUNÇÃO DO GERADOR DE LINK DO WHATSAPP
+function generateLink() {
+  let numero = document.form_Whats.numero.value;
+  let mensagem = document.form_Whats.mensagem.value;
+  let url = "https://api.whatsapp.com/send?phone=";
+  let url_final = `${url}${numero}&text=${mensagem}`;
+  document.getElementById('url_final').innerText = url_final;
+}
+function copyLink() {
+  const urlFinal = document.getElementById('url_final');
+  const urlText = urlFinal.innerText;
+  navigator.clipboard.writeText(urlText)
+    .then(() => {
+      alert('Link copiado para a área de transferência!');
+    })
+}
+
+
+//FUNÇÃO PARA TROCAR DE ABA
+function trocarAba(indice) {
+  // Ocultar todos os conteúdos de abas
+  var conteudos = document.querySelectorAll('.conteudo-aba > div');
+  for (var i = 0; i < conteudos.length; i++) {
+    conteudos[i].classList.remove('mostrar');
+  }
+  // Mostrar o conteúdo da aba selecionada
+  conteudos[indice].classList.add('mostrar');
 }
