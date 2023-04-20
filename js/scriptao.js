@@ -30,25 +30,22 @@ function render() {
     li.innerText = recipe;
 
     //ADICIONEI O EVENTO DE COPIAR TEXTO, SEM O BOTÃO
+    const copySpan = document.createElement("span");
+    copySpan.innerText = "Copiado!";
+    copySpan.style.display = "none";
+    li.appendChild(copySpan);
+
     li.classList.add("copyButton");
     li.addEventListener("click", () => {
       const textToCopy = li.innerText;
       navigator.clipboard.writeText(recipe).then(() => {
-        alert("Texto copiado com sucesso!");
+        copySpan.style = "display: inline;";
+        setTimeout(() => {
+          copySpan.style = "display: none;";
+        }, 3000);
       });
     });
-    //
     recipeList.appendChild(li);
-
-    //CRIANDO BOTÃO COPIAR TEXTO
-    //const copyButton = document.createElement('button');
-    //copyButton.innerText = '❐';
-    //copyButton.classList.add('copyButton');
-    //copyButton.addEventListener('click', () => {
-    //const textToCopy = li.innerText;
-    //navigator.clipboard.writeText(recipe);
-    //});
-    //li.appendChild(copyButton);
 
     //DELETANDO O TEXTO
     const deleteBtn = document.createElement("button");
@@ -100,7 +97,11 @@ function copyLink() {
   const urlFinal = document.getElementById("url_final");
   const urlText = urlFinal.innerText;
   navigator.clipboard.writeText(urlText).then(() => {
-    alert("Link copiado para a área de transferência!");
+    const copiado = document.getElementById("copiado");
+    copiado.style.display = "inline";
+    setTimeout(() => {
+      copiado.style.display = "none";
+    }, 3000);
   });
 }
 
