@@ -89,7 +89,7 @@ function transformText(text) {
 function generateLink() {
   let numero = document.form_Whats.numero.value;
   let mensagem = document.form_Whats.mensagem.value;
-  let url = "https://api.whatsapp.com/send?phone=";
+  let url = "https://api.whatsapp.com/send?phone=55";
   let url_final = `${url}${numero}&text=${mensagem}`;
   document.getElementById("url_final").innerText = url_final;
 }
@@ -119,11 +119,11 @@ function trocarAba(indice) {
 //JQUERY - CAMPO DE TELEFONE/WHATSAPP
 $(document).ready(function () {
   $("#numero")
-    .mask("9999999999999?9")
+    .mask("99999999999?9")
     .focusout(function () {
       var numero = this.value.replace(/\D/g, "");
       $(this)
         .unmask()
-        .mask(numero.length > 13 ? "9999999999999?9" : "9999999999999?9");
+        .mask(numero.length > 11 ? "99999999999?9" : "99999999999?9");
     });
 });
