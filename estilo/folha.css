@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: url("img/bg.png");
+  background-repeat: repeat;
+  background-position: 50% 50%;
+  padding: 4em 0 8em 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+}
+#conteudo {
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+/*H1 + MENU*/
+h1 {
+  text-transform: uppercase;
+  font-size: 3em;
+  letter-spacing: 0.03em;
+  color: #008cba;
+}
+#escolhaFerramenta {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  align-content: center;
+
+  margin: 40px 0 0 0;
+}
+.escolhaFerramenta {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.escolhaFerramenta:after {
+  content: "";
+  clear: both;
+}
+
+.radio {
+  border: 1px solid #008cba;
+  box-sizing: border-box;
+  float: left;
+  width: 100%;
+  height: 34px;
+  position: relative;
+}
+.radio label {
+  background: none;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  color: #008cba;
+  font-size: 0.85em;
+}
+.radio label span {
+  z-index: 1;
+}
+.radio label input[type="radio"] {
+  all: unset;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.radio label input[type="radio"]:checked {
+  background-color: #008cba;
+}
+.radio label input[type="radio"]:checked + span {
+  color: #fafafa;
+}
+.radio input[type="radio"]:disabled,
+.radio label input[type="radio"]:disabled + span {
+  background: #dceef300;
+  color: #80b1bf;
+  text-decoration: line-through;
+}
+/* FIM - MENU */
+
+#form {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: stretch;
+
+  margin: 0 0 40px 0;
+}
+#form_Whats {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: stretch;
+
+  margin: 0 0 40px 0;
+}
+#recipe {
+  padding: 14px;
+  background-color: #ffffff;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #008cba;
+  width: 100%;
+  color: rgba(0, 140, 186, 80%);
+  font-size: 0.9em;
+}
+#numero {
+  padding: 14px;
+  background-color: #ffffff;
+  border-radius: 5px 0 0 5px;
+  border: 1px solid #008cba;
+  width: 80%;
+  color: rgba(0, 140, 186, 80%);
+  font-size: 0.9em;
+  overflow: hidden;
+}
+#mensagem {
+  padding: 14px;
+  background-color: #ffffff;
+  border-radius: 0 0 0 0;
+  border: 1px solid #008cba;
+  width: 80%;
+  color: rgba(0, 140, 186, 80%);
+  font-size: 0.9em;
+}
+#ResultadoGerador {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: stretch;
+}
+#url_final {
+  width: 600px;
+  margin: 35px 0 0 0;
+
+  text-align: left;
+  word-break: break-word;
+  list-style: none;
+
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+
+  color: rgba(0, 140, 186, 95%);
+  font-weight: 300;
+  font-size: 0.9em;
+
+  cursor: pointer;
+}
+input:focus {
+  box-shadow: 0;
+  outline: 0;
+}
+#addBtn,
+#gerarLink {
+  position: relative;
+  top: auto;
+  right: 0;
+  padding: 15px 20px;
+  font-size: 16px;
+  border-radius: 0 5px 5px 0;
+  border: none;
+  background-color: #008cba;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.5s all;
+  font-size: 0.9em;
+}
+#addBtn:hover,
+#gerarLink:hover {
+  background-color: #006080;
+}
+
+#recipeList {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-between;
+  align-items: stretch;
+}
+li {
+  font-size: 0.9em;
+  margin: 20px 0 0 0;
+  text-align: left;
+  word-break: break-word;
+  list-style: none;
+  width: 600px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 0.5px solid #008cba45;
+  color: rgba(0, 140, 186, 95%);
+  font-weight: 300;
+}
+.copyButton:active {
+  border-bottom: 1px #4e945d solid;
+  color: #4e945d;
+  transition: 0.2s all;
+}
+#url_final:active {
+  color: #4e945d;
+  transition: 0.2s all;
+}
+.deleteBtn {
+  background: #008cba;
+  color: rgb(239 255 255);
+  border: none;
+  border-radius: 5px;
+  padding: 4px 12px;
+  margin: 0 0 5px 0;
+  cursor: pointer;
+  transition: 0.5s all;
+  float: right;
+  font-size: 1.6em;
+}
+.deleteBtn:hover {
+  background-color: #cc0000;
+}
+
+/*CONTEÚDO DAS ABAS*/
+.conteudo-aba {
+  width: 100% !important;
+  margin: 0 auto;
+}
+/*OCULTA CONTEUDO*/
+.conteudo-aba > div {
+  display: none;
+}
+/*MOSTRA CONTEUDO*/
+.conteudo-aba > div.mostrar {
+  display: block;
+}
+
+/*FOOTER*/
+footer a {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  min-height: 18px;
+
+  padding: 1em 0;
+  background: linear-gradient(0deg, #f1f1f1, #f1f1f199, transparent);
+  font-size: 0.7em;
+  color: #777777;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.5s all;
+}
+footer a:hover {
+  opacity: 0.7;
+}
+
+::placeholder {
+  color: rgba(0, 140, 186, 80%);
+  font-size: 0.9em;
+}
