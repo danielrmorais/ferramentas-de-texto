@@ -178,6 +178,8 @@ h1 {
   color: rgba(0, 140, 186, 95%);
   font-weight: 300;
   font-size: 0.9em;
+ 
+ cursor: pointer;
 }
 input:focus{
   box-shadow: 0; outline: 0;
