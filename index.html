@@ -87,6 +87,7 @@
           </div>
 
           <!-- GERADOR DE LINK WHATSAPP -->
+          <!-- GERADOR DE LINK WHATSAPP -->
           <div class="GeradorDeLinkWhatsApp">
             <form name="form_Whats" id="form_Whats">
               <input
@@ -99,7 +100,7 @@
                 type="text"
                 name="mensagem"
                 id="mensagem"
-                placeholder="Digite um texto de até 150 caracteres"
+                placeholder="Escreva uma breve mensagem"
                 maxlength="150"
               />
               <button type="button" id="gerarLink" onclick="generateLink()">
@@ -111,6 +112,13 @@
               <p id="url_final" onclick="copyLink()"></p>
               <span id="copiado" style="display: none">Copiado!</span>
             </div>
+
+            <select id="tipo_mensagem">
+              <option value="padrao">Mensagem Personalizada</option>
+              <option value="site">Site</option>
+              <option value="portal">Portal</option>
+              <option value="cartao">Cartão Digital</option>
+            </select>
           </div>
         </div>
       </div>

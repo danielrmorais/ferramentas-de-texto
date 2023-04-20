@@ -87,12 +87,23 @@ function transformText(text) {
 
 //FUNÇÃO DO GERADOR DE LINK DO WHATSAPP
 function generateLink() {
-  let numero = document.form_Whats.numero.value;
-  let mensagem = document.form_Whats.mensagem.value;
-  let url = "https://api.whatsapp.com/send?phone=550";
-  let url_final = `${url}${numero}&text=${mensagem}`;
-  document.getElementById("url_final").innerText = url_final;
+  const numero = document.form_Whats.numero.value;
+  const mensagem = document.form_Whats.mensagem.value;
+  const tipoMensagem = document.getElementById("tipo_mensagem").value;
+
+  let textoMensagem = mensagem;
+  if (tipoMensagem === "site") {
+    textoMensagem = "Contato feito através do nosso Site!";
+  } else if (tipoMensagem === "portal") {
+    textoMensagem = "Contato feito através do nosso Portal!";
+  } else if (tipoMensagem === "cartao") {
+    textoMensagem = "Contato feito através do nosso Cartão Digital!";
+  }
+
+  const url = `https://api.whatsapp.com/send?phone=550${numero}&text=${textoMensagem}`;
+  document.getElementById("url_final").innerText = url;
 }
+
 function copyLink() {
   const urlFinal = document.getElementById("url_final");
   const urlText = urlFinal.innerText;

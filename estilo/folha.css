@@ -127,6 +127,20 @@ h1 {
 
   margin: 0 0 40px 0;
 }
+#tipo_mensagem {
+  margin: 2% auto 0 auto;
+  padding: 14px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #008cba;
+  width: 100%;
+  color: rgba(0, 140, 186, 80%);
+  font-size: 0.9em;
+  -webkit-border-radius: 5px5px;
+  -moz-border-radius: 5px5px;
+  -ms-border-radius: 5px5px;
+  -o-border-radius: 5px5px;
+}
 #recipe {
   padding: 14px;
   background-color: #ffffff;
@@ -163,7 +177,10 @@ h1 {
   justify-content: space-between;
   align-items: stretch;
 }
-#url_final {
+#url_final,
+#url_finalSite,
+#url_finalPortal,
+#url_finalCartaoDigital {
   width: 600px;
   margin: 35px 0 0 0;
 
