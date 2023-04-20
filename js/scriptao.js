@@ -119,11 +119,11 @@ function trocarAba(indice) {
 //JQUERY - CAMPO DE TELEFONE/WHATSAPP
 $(document).ready(function () {
   $("#numero")
-    .mask("99999999999?9")
+    .mask("9999999999999?9")
     .focusout(function () {
       var numero = this.value.replace(/\D/g, "");
       $(this)
         .unmask()
-        .mask(numero.length > 11 ? "99999999999?9" : "99999999999?9");
+        .mask(numero.length > 13 ? "9999999999999?9" : "9999999999999?9");
     });
 });
